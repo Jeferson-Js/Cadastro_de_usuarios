@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Base</title>
-    <link rel="stylesheet" href="{% static 'css/tailwind.css' %}">
     <link rel="shortcut icon" href="{% static 'img/python.png' %}" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-blue-400">
-    <header>
-        <nav>
+    <header class="flex">
+        <nav class="bg-white flex justify-around items-center fixed w-full h-16 shadow-md">
             <span>
-                <img src="{% static 'img/python.png' %}" alt="logo_python">
+                <img src="{% static 'img/python.png' %}" alt="logo_python" class="w-16 h-16">
                 <h2>Django</h2>
             </span>
             <ul>
