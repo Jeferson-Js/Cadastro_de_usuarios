@@ -9,12 +9,23 @@
 </head>
 <body class="bg-blue-400">
     <header>
-        menu
+        <nav>
+            <span>
+                <img src="{% static 'img/python.png' %}" alt="logo_python">
+                <h2>Django</h2>
+            </span>
+            <ul>
+                <li><a href="">Configurações</a></li>
+            </ul>
+        </nav>
     </header>
     {% block conteudo %}
     {% endblock %}
     <footer>
-        footer
+        <div>
+            <h3>Django</h3>
+        </div>
+        <p>All rights reservd Oliveira.js &copy; June 2023</p>
     </footer>
 </body>
 </html>
