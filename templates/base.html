@@ -13,20 +13,22 @@
         <nav class="bg-white flex justify-around items-center fixed w-full h-16 shadow-md">
             <span class="flex items-center gap-3">
                 <img src="{% static 'img/python.png' %}" alt="logo_python" class="w-12 h-12">
-                <h2 class="font-semibold text-yellow-300">Django</h2>
+                <h2 class="font-semibold text-yellow-200">Django</h2>
             </span>
             <ul>
-                <li><a href="">Documentação</a></li>
+                {% with documentation_url="https://www.djangoproject.com/" %}
+                <li class="font-semibold lg:text-lg md:text-base text-sm text-blue-400"><a href="{{ documentation_url }}" target="_blank">Documentation <span class="font-semibold lg:text-lg md:text-base text-sm text-green-700">Django</span></a></li>
+                {% endwith %}
             </ul>
         </nav>
     </header>
     {% block conteudo %}
     {% endblock %}
     <footer class="bg-white w-full h-28">
-        <div class="bg-gray-100 p-4">
-            <h3 class="font-semibold lg:text-lg md:text-base text-sm text-green-600">Django</h3>
+        <div class="bg-gray-100 p-4 w-full">
+            <h3 class="font-semibold lg:text-lg md:text-base text-sm text-green-600 lg:text-blue-400 flex justify-center lg:justify-start">Django</h3>
         </div>
-        <p class="lg:text-lg md:text-base text-sm text-center pt-2 text-blue-400 font-semibold animate-pulse">All rights reservd Oliveira.js &copy; June 2023</p>
+        <p class="lg:text-lg md:text-base text-sm text-center pt-5 text-blue-400 font-semibold animate-pulse">All rights reservd Oliveira.js &copy; June 2023</p>
     </footer>
 </body>
 </html>

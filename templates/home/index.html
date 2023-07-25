@@ -1,7 +1,56 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block title%}update{% endblock %}
 {% block conteudo %}
-<section class="min-h-screen flex justify-center items-center">
-    <h1>{{ title }}</h1>
+<section class="min-h-screen lg:flex justify-center items-center p-2">
+  <form action="{% url 'create_user' %}" method="post" class="flex flex-col justify-center items-center lg:w-1/2 mt-28 bg-gray-100 w-72 h-60 shadow-lg rounded-lg mx-auto mb-14 ">
+    {% csrf_token %}
+    <input
+      type="text"
+      name="nome"
+      placeholder="Digite o seu nome"
+      autocomplete="off"
+      class="py-3 outline-transparent outline-yellow-200 pl-2 rounded-lg shadow-lg mb-5 w-60"
+      required
+    />
+    <input
+      type="text"
+      name="cidade"
+      placeholder="Digite o sua cidade"
+      autocomplete="off"
+      class="py-3 outline-transparent outline-yellow-200 pl-2 rounded-lg shadow-lg mb-5 w-60"
+      required
+    />
+    <button
+      type="submit"
+      class="bg-yellow-200 hover:bg-yellow-300 duration-700 text-gray-500 hover:text-white font-semibold py-2 px-5 rounded-lg outline-transparent outline-yellow-200"
+    >
+      Cadastrar
+    </button>
+  </form>
+
+  <table class="table-auto mt-12 mb-8 lg:flex-col mx-auto shadow-lg">
+    <thead>
+      <tr class="bg-yellow-200 hidden lg:table-row">
+        <th class="px-2 py-2 text-blue-400">ID</th>
+        <th class="px-2 py-2 text-blue-400">Nome</th>
+        <th class="px-2 py-2 text-blue-400">Cidade</th>
+        <th class="px-2 py-2 text-blue-400">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for usuario in usuarios %}
+      <tr class="bg-gray-100 lg:table-row">
+        <td class="border px-3 py-2">{{ usuario.id }}</td>
+        <td class="border px-3 py-2">{{ usuario.nome }}</td>
+        <td class="border px-3 py-2">{{ usuario.cidade }}</td>
+        <td class="border px-3 py-2">
+          <a href="{% url 'edit_user' usuario.id %}" class="text-blue-500">Editar</a>
+          <a href="{% url 'delete_user' usuario.id %}" class="text-red-500 ml-2">Excluir</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </section>
 {% endblock %}
