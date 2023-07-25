@@ -114,7 +114,7 @@ STATIC_URL = 'static/'
 
 # Defina a URL para arquivos de mídia (imagens, uploads, etc.)
 MEDIA_URL = '/img/'
-
+ 
 # Defina o diretório onde os arquivos estáticos estão localizados
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
