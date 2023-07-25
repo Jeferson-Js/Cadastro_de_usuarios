@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Base</title>
+    <title>{% block title %}{% endblock %}</title>
     <link rel="shortcut icon" href="{% static 'img/python.png' %}" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -13,17 +13,17 @@
         <nav class="bg-white flex justify-around items-center fixed w-full h-16 shadow-md">
             <span class="flex items-center gap-3">
                 <img src="{% static 'img/python.png' %}" alt="logo_python" class="w-12 h-12">
-                <h2>Django</h2>
+                <h2 class="font-semibold text-yellow-300">Django</h2>
             </span>
             <ul>
-                <li><a href="">Configurações</a></li>
+                <li><a href="">Documentação</a></li>
             </ul>
         </nav>
     </header>
     {% block conteudo %}
     {% endblock %}
     <footer class="bg-white w-full h-28">
-        <div class="bg-gray-200 p-4">
+        <div class="bg-gray-100 p-4">
             <h3 class="font-semibold lg:text-lg md:text-base text-sm text-green-600">Django</h3>
         </div>
         <p class="lg:text-lg md:text-base text-sm text-center pt-2 text-blue-400 font-semibold animate-pulse">All rights reservd Oliveira.js &copy; June 2023</p>
