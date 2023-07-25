@@ -112,6 +112,8 @@ USE_TZ = True
 # Defina a URL para arquivos estáticos
 STATIC_URL = 'static/'
 
+MEDIA_ROOT =  os.path.join(BASE_DIR, 'img')
+
 # Defina a URL para arquivos de mídia (imagens, uploads, etc.)
 MEDIA_URL = '/img/'
  
